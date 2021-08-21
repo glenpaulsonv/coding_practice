@@ -9,3 +9,5 @@ public static void allSubStrings(String str)
         }
     }
 }
+
+//took the help of geeksforgeeks solution
