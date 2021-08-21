@@ -13,3 +13,11 @@ int power(int a, int N)
 }
 
 //Time complexity O(logN)
+
+power(a,N)
+{
+    if(N is even)
+        return ((power(a,N/2)%M)*(power(a,N/2)%M))%M;
+    else 
+        return return ((power(a,N/2)%M)*(power(a,N/2)%M)*a)%M;
+}
