@@ -1,28 +1,36 @@
-private static void find(String str)
-{
-    int[] count=new int[26];
-    Queue<Character> q = new LinkedList<Character>();
-
-    for(int i=0;i<str.length();i++)
+public String FirstNonRepeating(String A)
     {
-        char ch=str.charAt(i);
-        q.add(ch);
-        count[ch-'a']++ //Note it down
-        while(!q.isEmpty())
+       
+      int[] count=new int[26];
+      Queue<Character> q = new LinkedList<Character>();
+      String res="";
+
+        for(int i=0;i<A.length();i++)
         {
-            if(count[q.peek()-'ch']>1)
+            char ch=A.charAt(i);
+            q.add(ch);
+            count[ch-'a']++; //Note it down
+        
+            while(!q.isEmpty())
             {
-                q.remove();
-            }
-            else
-            {
-                System.out.println(q.peek()+" ");
-                break;
-            }
+                if(count[(q.peek()-'a')]>1)
+                {
+                    q.remove();
+                }
+                else
+                {
+                    //System.out.println(q.peek()+" ");
+                    res+=q.peek();
+                    break;
+                }
         }
         if(q.isEmpty())
         {
-            System.out.println(-1 + " ");
+            //System.out.println(-1 + " ");
+            res+="#";
         }
+        
     }
+    return res;
+    
 }
