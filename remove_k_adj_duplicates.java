@@ -25,5 +25,7 @@ private static void remove(String string, int k)
                 count.push(inc);
             }
         }
+        
     }
+    System.out.println(sb.toString());
 }
