@@ -1,6 +1,6 @@
 //total number of paths 
 //took the help of geeksforgeeks
-
+//topmost left most cell is (1,1)
 //Solution 1
 
 static int totNumberOfPaths(int m, int n)
@@ -22,4 +22,24 @@ static int totNumberOfPaths(int m, int n)
 
     }
     return count[m-1][n-1];
+}
+
+//T(C) = O(mn)  S(C) = O(mn)
+
+//Solution 2
+
+
+static int totNumberOfPaths(int m, int n)
+{
+    int[] dp = new int[n];
+    dp[0]=1;
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=1;j<n;j++)
+        {
+            dp[j] = dp[j]+dp[j-1];
+        }
+    }
+    return dp[n-1];
 }
